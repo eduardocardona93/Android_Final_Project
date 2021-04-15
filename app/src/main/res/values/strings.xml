@@ -9,4 +9,37 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="userLabel">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="notUserLabel">Not an user?</string>
+    <string name="registerButtonText">Register</string>
+    <string name="loginButtonText">Log In</string>
+    <string name="logo">LOGO</string>
+    <string name="usernameLabel">Username</string>
+    <string name="fullNameLabel">Full name</string>
+    <string name="phoneNumberLabel">Phone Number</string>
+    <string name="emailLabel">Email address</string>
+    <string name="retypePassowrdLabel">Re-type Password</string>
+    <string name="loggedAsLabel">Logged as</string>
+    <string name="idLabel">Id</string>
+    <string name="prodNameLabel">Name</string>
+    <string name="productPriceLabel">Price</string>
+    <string name="totalLabel">Total</string>
+    <string name="orderIdLabel">Order Id</string>
+    <string name="clientLabel">Client</string>
+    <string name="paperTypeLabel">Paper Type</string>
+    <string name="backgroundColorLabel">Background color</string>
+    <string name="fontColorLabel">Font Color</string>
+    <string name="fontTypeLabel">Font Type</string>
+    <string name="widthLabel">Width</string>
+    <string name="inchesLabel">in</string>
+    <string name="feetsLabel">ft</string>
+    <string name="quantityLabel">Quantity</string>
+    <string name="copiesLabel">Copies</string>
+    <string name="identificationLabel">Identification</string>
+    <string name="companyCodeLabel">Company Code</string>
+    <string name="clientsLabel">Clients</string>
+    <string name="homeLabel">Home Menu</string>
+    <string name="productsLabel">Products</string>
+    <string name="ordersLabel">Orders</string>
 </resources>
