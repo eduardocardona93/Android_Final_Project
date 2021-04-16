@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="FieldsTitles" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+    </style>
+
+  <style name="FieldsText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/raleway_regular</item>
+      <item name="android:padding">12dp</item>
+    </style>
+
+'
+
+</resources>
