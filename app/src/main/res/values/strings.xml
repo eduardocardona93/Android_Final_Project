@@ -42,4 +42,6 @@
     <string name="homeLabel">Home Menu</string>
     <string name="productsLabel">Products</string>
     <string name="ordersLabel">Orders</string>
+    <string name="saveButtonLabel">Save</string>
+    <string name="productDetailLabel">Product Detail</string>
 </resources>

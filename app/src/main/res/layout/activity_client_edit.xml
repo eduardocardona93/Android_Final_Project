@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/textView27"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
@@ -21,22 +21,22 @@
     <TextView
         android:id="@+id/textView19"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="40dp"
         android:gravity="center|start"
         android:text="@string/identificationLabel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/clientEditTitleLbl" />
 
     <EditText
         android:id="@+id/clientIdFld"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="42dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
     <TextView
         android:id="@+id/textView26"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
@@ -57,10 +57,10 @@
     <EditText
         android:id="@+id/clientNameFld"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="42dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,10 +69,10 @@
     <EditText
         android:id="@+id/clientEmailFld"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="42dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,10 +81,10 @@
     <EditText
         android:id="@+id/clientPhoneFld"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="42dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +93,7 @@
     <TextView
         android:id="@+id/textView34"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
@@ -105,7 +105,7 @@
     <TextView
         android:id="@+id/textView35"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
@@ -117,13 +117,38 @@
     <EditText
         android:id="@+id/clientCompanyCodeFld"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="42dp"
         android:layout_marginStart="55dp"
         android:layout_marginLeft="55dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+    <TextView
+        android:id="@+id/clientEditTitleLbl"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center|center_horizontal"
+        android:textColor="#2196F3"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/saveClientBtn"
+        android:layout_width="295dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/saveButtonLabel"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clientCompanyCodeFld" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

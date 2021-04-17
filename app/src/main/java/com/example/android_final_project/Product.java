@@ -6,7 +6,7 @@ public class Product {
     private String prodDescription;
     private Double prodPrice;
 
-    public Product(int prodId, String prodName, String prodDescription, Double prodPrice) {
+    public Product(int prodId, String prodName, Double prodPrice, String prodDescription) {
         this.prodId = prodId;
         this.prodName = prodName;
         this.prodDescription = prodDescription;
@@ -44,4 +44,5 @@ public class Product {
     public void setProdPrice(Double prodPrice) {
         this.prodPrice = prodPrice;
     }
+
 }
