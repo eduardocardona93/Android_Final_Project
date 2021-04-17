@@ -4,154 +4,175 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="26dp"
     tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/textView6"
+        style="@style/FieldsTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
         android:text="@string/phoneNumberLabel"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/userFullnameFld"
         app:layout_constraintTop_toBottomOf="@+id/userFullnameFld" />
 
     <EditText
         android:id="@+id/userFullnameFld"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
+        style="@style/FieldsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/gradient_background"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userNameFld"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView5"
+        style="@style/FieldsTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
         android:text="@string/fullNameLabel"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/userNameFld"
         app:layout_constraintTop_toBottomOf="@+id/userNameFld" />
 
     <TextView
         android:id="@+id/textView4"
+        style="@style/FieldsTitles"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="0dp"
         android:text="@string/usernameLabel"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBack" />
 
     <EditText
         android:id="@+id/userNameFld"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:ems="10"
+        style="@style/FieldsText"
+        android:background="@drawable/gradient_background"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/userPhoneFld"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
+        style="@style/FieldsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/gradient_background"
         android:ems="10"
         android:inputType="phone"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userFullnameFld"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
         android:id="@+id/userEmailFld"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
+        style="@style/FieldsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/gradient_background"
         android:ems="10"
         android:inputType="textEmailAddress"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userPhoneFld"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/textView7"
+        style="@style/FieldsTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
         android:text="@string/emailLabel"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/userPhoneFld"
         app:layout_constraintTop_toBottomOf="@+id/userPhoneFld" />
 
     <EditText
         android:id="@+id/userPasswordFld"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
+        style="@style/FieldsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/gradient_background"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userEmailFld"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <EditText
         android:id="@+id/userRetypePassFld"
-        android:layout_width="300dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
+        style="@style/FieldsText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/gradient_background"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userPasswordFld"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView8"
+        style="@style/FieldsTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
         android:text="@string/password"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/userEmailFld"
         app:layout_constraintTop_toBottomOf="@+id/userEmailFld" />
 
     <TextView
         android:id="@+id/textView9"
+        style="@style/FieldsTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
         android:layout_marginTop="20dp"
         android:text="@string/retypePassowrdLabel"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/userPasswordFld"
         app:layout_constraintTop_toBottomOf="@+id/userPasswordFld" />
 
     <Button
         android:id="@+id/registerUserButton"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+
+        android:background="@drawable/btn_bg"
+        android:fontFamily="@font/raleway_semibold"
         android:text="@string/registerButtonText"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/userRetypePassFld"
+        app:layout_constraintStart_toStartOf="@+id/userRetypePassFld"
+        app:layout_constraintTop_toBottomOf="@+id/userRetypePassFld"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userRetypePassFld" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_baseline_arrow_back_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>
