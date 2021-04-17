@@ -1,15 +1,19 @@
-package com.example.android_final_project;
+package com.example.android_final_project.orders;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.android_final_project.LoginActivity;
+import com.example.android_final_project.products.Product;
+import com.example.android_final_project.R;
+import com.example.android_final_project.clients.Client;
 
 import java.util.ArrayList;
 

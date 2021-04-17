@@ -9,23 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Final_Project">
-        <activity android:name=".OrderEditActivity"></activity>
-        <activity android:name=".OrdersListActivity" />
-        <activity android:name=".ClientEditActivity" />
-        <activity android:name=".ClientsListActivity" />
-        <activity android:name=".ProductDetailActivity" />
-        <activity android:name=".ProductsListActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".RegisterActivity"
-            android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".LoginActivity"
-            android:windowSoftInputMode="adjustResize"
-            >
+        <activity android:name=".SplashScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".orders.OrderEditActivity" />
+        <activity android:name=".orders.OrdersListActivity" />
+        <activity android:name=".clients.ClientEditActivity" />
+        <activity android:name=".clients.ClientsListActivity" >
+
+        </activity>
+        <activity android:name=".products.ProductDetailActivity" />
+        <activity android:name=".products.ProductsListActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity
+            android:name=".RegisterActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:windowSoftInputMode="adjustResize">
+
         </activity>
     </application>
 

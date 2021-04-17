@@ -1,11 +1,12 @@
-package com.example.android_final_project;
+package com.example.android_final_project.products;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.android_final_project.R;
 
 public class ProductDetailActivity extends AppCompatActivity {
     TextView productIdLbl, productNameLbl,productPriceLbl,productDescriptionLbl;

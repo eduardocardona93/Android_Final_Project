@@ -1,8 +1,10 @@
-package com.example.android_final_project;
+package com.example.android_final_project.orders;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.android_final_project.R;
 
 public class OrdersListActivity extends AppCompatActivity {
     public static Order selectedOrder;

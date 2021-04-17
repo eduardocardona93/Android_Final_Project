@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".HomeActivity">
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/FieldsTitles"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="47dp"
@@ -25,6 +27,9 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="47dp"
         android:gravity="end"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="14dp"
+        android:fontFamily="@font/raleway_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -32,12 +37,66 @@
         android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
         android:layout_marginTop="24dp"
+        android:fontFamily="@font/raleway_bold"
         android:text="@string/homeLabel"
-        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textSize="26sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtOrders"
+        style="@style/HomeMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_orders"
+        android:drawableLeft="@drawable/ic_orders"
+        android:drawablePadding="70dp"
+        android:gravity="center_vertical"
+        android:text="@string/orders"
+        app:layout_constraintBottom_toTopOf="@+id/txtClients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView37"
+        app:layout_constraintVertical_bias="0.32999998"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/txtClients"
+        style="@style/HomeMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_clients"
+        android:drawablePadding="60dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="50dp"
+        android:text="@string/clients"
+        app:layout_constraintBottom_toTopOf="@+id/txtProducts"
+        app:layout_constraintEnd_toEndOf="@+id/txtOrders"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtOrders"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrders"
+        android:drawableLeft="@drawable/ic_orders" />
+
+    <TextView
+        android:id="@+id/txtProducts"
+        style="@style/HomeMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_products"
+        android:drawablePadding="30dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="50dp"
+        android:text="@string/products"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtClients"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtClients"
+        app:layout_constraintTop_toBottomOf="@+id/txtClients"
+        app:layout_constraintVertical_bias="0.0"
+        android:drawableLeft="@drawable/ic_products" />
 </androidx.constraintlayout.widget.ConstraintLayout>

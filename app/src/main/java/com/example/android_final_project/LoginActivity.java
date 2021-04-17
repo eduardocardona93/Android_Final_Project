@@ -1,29 +1,31 @@
 package com.example.android_final_project;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.android_final_project.clients.Client;
+import com.example.android_final_project.products.Product;
+
 import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
     EditText loginUserFld, logInPasswordField;
-    Button loginBtn, registerBtn;
+    Button loginBtn;
+    TextView registerBtn;
 
     public static ArrayList<Salesperson> userList = new ArrayList<>();
     public static ArrayList<Client> clientsList = new ArrayList<>();
     public static ArrayList<Product> producstList = new ArrayList<>();
 
     public static Salesperson loggedUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( getBaseContext(), RegisterActivity.class);
+                Intent intent = new Intent(getBaseContext(), RegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -45,21 +47,21 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(loginUserFld.getText().toString().isEmpty()){
+                if (loginUserFld.getText().toString().isEmpty()) {
                     Toast.makeText(getBaseContext(), "The user field is empty", Toast.LENGTH_SHORT).show();
-                }else if(logInPasswordField.getText().toString().isEmpty()){
+                } else if (logInPasswordField.getText().toString().isEmpty()) {
                     Toast.makeText(getBaseContext(), "The password field is empty", Toast.LENGTH_SHORT).show();
-                }else{
-                    for (Salesperson user: userList) {
-                        if((user.getSpEmail().equalsIgnoreCase(loginUserFld.getText().toString()) || user.getSpUsername().equalsIgnoreCase(loginUserFld.getText().toString())) && user.getSpPassword().equals(logInPasswordField.getText().toString())){
+                } else {
+                    for (Salesperson user : userList) {
+                        if ((user.getSpEmail().equalsIgnoreCase(loginUserFld.getText().toString()) || user.getSpUsername().equalsIgnoreCase(loginUserFld.getText().toString())) && user.getSpPassword().equals(logInPasswordField.getText().toString())) {
                             loggedUser = user;
-                            Intent intent = new Intent( getBaseContext(), HomeActivity.class);
+                            Intent intent = new Intent(getBaseContext(), HomeActivity.class);
                             startActivity(intent);
                         }
                     }
-                    if (loggedUser == null){
+                    if (loggedUser == null) {
                         Toast.makeText(getBaseContext(), "Invalid user/email or password", Toast.LENGTH_SHORT).show();
-                    }else{
+                    } else {
                         Toast.makeText(getBaseContext(), "Welcome " + loggedUser.getSpFullname(), Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -70,25 +72,26 @@ public class LoginActivity extends AppCompatActivity {
         fillUsers();
         fillClients();
     }
-//
-    public void fillUsers(){
-        if(userList.size() == 0 ){
-            userList.add(new Salesperson( "Eduardo Cardona",  "eduardoacm93",  "123456", "5555555","eduardoacm93@company.com"));
-            userList.add(new Salesperson( "Ranjana",  "ranjana",  "778899", "3232323", "ranjana@company.com"));
-            userList.add(new Salesperson( "Dina Johnson",  "dj",  "000111", "4545454",  "dj@company.com"));
+
+    //
+    public void fillUsers() {
+        if (userList.size() == 0) {
+            userList.add(new Salesperson("Eduardo Cardona", "eduardoacm93", "123456", "5555555", "eduardoacm93@company.com"));
+            userList.add(new Salesperson("Ranjana", "ranjana", "778899", "3232323", "ranjana@company.com"));
+            userList.add(new Salesperson("Dina Johnson", "dj", "000111", "4545454", "dj@company.com"));
         }
 
     }
 
-    public void fillClients(){
-        if(clientsList.size() == 0){
-            clientsList.add(new Client( "111111" ,  "Rasagjna Ghandi" ,  "21554" ,  "913133337755" ,  "example1@company1.com" ));
-            clientsList.add(new Client( "222222" ,  "Lino Hernandez" ,  "21553" ,  "915133436754" ,  "example2@company2.com" ));
+    public void fillClients() {
+        if (clientsList.size() == 0) {
+            clientsList.add(new Client("111111", "Rasagjna Ghandi", "21554", "913133337755", "example1@company1.com"));
+            clientsList.add(new Client("222222", "Lino Hernandez", "21553", "915133436754", "example2@company2.com"));
         }
     }
 
-    public void fillProducts(){
-        if(producstList.size() == 0) {
+    public void fillProducts() {
+        if (producstList.size() == 0) {
             producstList.add(new Product(100, "Inkjet printer paper", 10.0, "this type of papper is designed for specific use with"));
             producstList.add(new Product(200, "Matte", 5.0, "particularly for those seeking a softer, smoother appearance that minimizes glare."));
             producstList.add(new Product(300, "Bright White", 5.0, "it is Multipurpose Office Paper is very suitable to be used in fast speeds and hassle-free printers and copiers"));
@@ -101,7 +104,6 @@ public class LoginActivity extends AppCompatActivity {
             producstList.add(new Product(1500, "Vinyl Banner Printing", 25.0, "digitally printed on large format inkjet printers which are capable of printing a full color outdoor billboard on a single piece of material."));
         }
     }
-
 
 
 }

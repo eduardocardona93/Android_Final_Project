@@ -1,4 +1,4 @@
-package com.example.android_final_project;
+package com.example.android_final_project.clients;
 
 public class Client {
     private String clientFullName;

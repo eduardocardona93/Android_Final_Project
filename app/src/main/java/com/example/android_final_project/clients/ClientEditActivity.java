@@ -1,17 +1,17 @@
-package com.example.android_final_project;
+package com.example.android_final_project.clients;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.MailTo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.android_final_project.LoginActivity;
+import com.example.android_final_project.R;
 
 public class ClientEditActivity extends AppCompatActivity {
     EditText clientIdFld, clientNameFld, clientEmailFld, clientPhoneFld,clientCompanyCodeFld;
