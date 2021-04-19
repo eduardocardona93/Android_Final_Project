@@ -1,6 +1,7 @@
 package com.example.android_final_project.clients;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,6 +35,15 @@ public class ClientsListActivity extends AppCompatActivity {
 
         rcClients.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rcClients.setAdapter(new ClientsAdapter(this, LoginActivity.clientsList));
+
+        findViewById(R.id.imgAddClient).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // Open Add Client activity
+                //startActivity(new Intent(ClientsListActivity.this,Create));
+            }
+        });
     }
 
     class ClientsAdapter extends
