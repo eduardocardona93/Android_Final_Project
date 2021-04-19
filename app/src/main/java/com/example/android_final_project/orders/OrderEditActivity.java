@@ -1,6 +1,7 @@
 package com.example.android_final_project.orders;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class OrderEditActivity extends AppCompatActivity {
     Spinner clientSp, paperTypeSp, bgColorSp, fontColorSp,fontTypeSp;
     EditText widthFld, heightFld, quantityFld;
     Button saveOrderBtn;
+    ConstraintLayout layoutEditOrder;
     public static ArrayList<Client> clientsList = new ArrayList<>();
     public static ArrayList<Product> producstList = new ArrayList<>();
     ArrayList<String> arrClients = new ArrayList<>();
@@ -85,6 +87,8 @@ public class OrderEditActivity extends AppCompatActivity {
         quantityFld = findViewById(R.id.quantityFld);
         orderEditTitleLbl = findViewById(R.id.orderEditTitleLbl);
         saveOrderBtn = findViewById(R.id.saveOrderBtn);
+        layoutEditOrder = findViewById(R.id.layoutEditOrder);
+
 
         clientsList = LoginActivity.clientsList;
         producstList = LoginActivity.producstList;

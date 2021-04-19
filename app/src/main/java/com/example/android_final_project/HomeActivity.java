@@ -6,15 +6,18 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.android_final_project.clients.ClientsListActivity;
 import com.example.android_final_project.orders.OrdersListActivity;
 import com.example.android_final_project.products.ProductsListActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView txtOrders, txtProducts, txtClients, txtLoggedInUser;
-
+    ConstraintLayout layoutHome;
+    public static Salesperson loggedUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +26,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         txtOrders = findViewById(R.id.txtOrders);
         txtProducts = findViewById(R.id.txtProducts);
         txtLoggedInUser = findViewById(R.id.loggedAsUserNameLabel);
+        layoutHome = findViewById(R.id.layoutHome);
 
-        txtLoggedInUser.setText(LoginActivity.loggedUser.getSpFullname());
+        loggedUser = LoginActivity.loggedUser;
+        Snackbar.make(layoutHome, "Welcome " + loggedUser.getSpFullname(), Snackbar.LENGTH_SHORT).show();
+        txtLoggedInUser.setText(loggedUser.getSpFullname());
 
         txtClients.setOnClickListener(this);
         txtProducts.setOnClickListener(this);

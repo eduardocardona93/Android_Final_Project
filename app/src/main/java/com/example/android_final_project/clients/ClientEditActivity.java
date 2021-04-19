@@ -1,6 +1,7 @@
 package com.example.android_final_project.clients;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +13,13 @@ import android.widget.Toast;
 
 import com.example.android_final_project.LoginActivity;
 import com.example.android_final_project.R;
+import com.google.android.material.snackbar.Snackbar;
 
 public class ClientEditActivity extends AppCompatActivity {
     EditText clientIdFld, clientNameFld, clientEmailFld, clientPhoneFld,clientCompanyCodeFld;
     TextView clientEditTitleLbl;
     Button saveClientBtn;
+    ConstraintLayout layoutEditClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +31,7 @@ public class ClientEditActivity extends AppCompatActivity {
         clientCompanyCodeFld = findViewById(R.id.clientCompanyCodeFld);
         clientEditTitleLbl = findViewById(R.id.clientEditTitleLbl);
         saveClientBtn = findViewById(R.id.saveClientBtn);
-
+        layoutEditClient = findViewById(R.id.layoutEditClient);
 
         clientEditTitleLbl.setText("Add Client");
         if(ClientsListActivity.selectedClient != null){
@@ -44,15 +47,17 @@ public class ClientEditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (clientIdFld.getText().toString().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "The identification field is empty", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(layoutEditClient, "The identification field is empty", Snackbar.LENGTH_SHORT).show();
                 }else if (clientNameFld.getText().toString().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "The full name field is empty", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(layoutEditClient, "The full name field is empty", Snackbar.LENGTH_SHORT).show();
+
                 }else if (clientCompanyCodeFld.getText().toString().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "The company code field is empty", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(layoutEditClient, "The company code field is empty", Snackbar.LENGTH_SHORT).show();
+
                 }else if (clientEmailFld.getText().toString().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "The email field is empty", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(layoutEditClient, "The email field is empty", Snackbar.LENGTH_SHORT).show();
                 }else if (clientPhoneFld.getText().toString().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "The phone field is empty", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(layoutEditClient, "The phone field is empty", Snackbar.LENGTH_SHORT).show();
                 }else{
                     if(ClientsListActivity.selectedClient != null){
                         LoginActivity.clientsList.add(new Client(
@@ -63,14 +68,16 @@ public class ClientEditActivity extends AppCompatActivity {
                                 clientEmailFld.getText().toString())
                         );
 
-                        Toast.makeText(getBaseContext(), "Client Successfully created", Toast.LENGTH_SHORT).show();
+                        Snackbar.make(layoutEditClient, "Client Successfully created", Snackbar.LENGTH_SHORT).show();
+
                     }else{
                         ClientsListActivity.selectedClient.setClientIdentification(clientIdFld.getText().toString());
                         ClientsListActivity.selectedClient.setClientFullName(clientNameFld.getText().toString());
                         ClientsListActivity.selectedClient.setClientEmail(clientEmailFld.getText().toString());
                         ClientsListActivity.selectedClient.setClientCompanyCode(clientCompanyCodeFld.getText().toString());
                         ClientsListActivity.selectedClient.setClientPhoneNumber(clientPhoneFld.getText().toString());
-                        Toast.makeText(getBaseContext(), "Client Successfully edited", Toast.LENGTH_SHORT).show();
+                        Snackbar.make(layoutEditClient, "Client Successfully edited", Snackbar.LENGTH_SHORT).show();
+
                     }
 
                     Intent intent = new Intent( getBaseContext(), ClientsListActivity.class);

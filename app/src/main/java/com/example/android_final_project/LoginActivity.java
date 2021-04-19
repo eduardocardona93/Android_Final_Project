@@ -9,9 +9,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.android_final_project.clients.Client;
 import com.example.android_final_project.products.Product;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
@@ -19,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText loginUserFld, logInPasswordField;
     Button loginBtn;
     TextView registerBtn;
-
+    ConstraintLayout layoutLogin;
     public static ArrayList<Salesperson> userList = new ArrayList<>();
     public static ArrayList<Client> clientsList = new ArrayList<>();
     public static ArrayList<Product> producstList = new ArrayList<>();
@@ -31,10 +33,18 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        loggedUser = null;
+
         loginUserFld = findViewById(R.id.loginUserFld);
+        loginUserFld.setText("");
+
         logInPasswordField = findViewById(R.id.logInPasswordField);
+        logInPasswordField.setText("");
+
         loginBtn = findViewById(R.id.loginBtn);
         registerBtn = findViewById(R.id.registerBtn);
+
+        layoutLogin = findViewById(R.id.layoutLogin);
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,9 +58,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (loginUserFld.getText().toString().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "The user field is empty", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(layoutLogin, "The user field is empty", Snackbar.LENGTH_SHORT).show();
                 } else if (logInPasswordField.getText().toString().isEmpty()) {
-                    Toast.makeText(getBaseContext(), "The password field is empty", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(layoutLogin, "The password field is empty", Snackbar.LENGTH_SHORT).show();
                 } else {
                     for (Salesperson user : userList) {
                         if ((user.getSpEmail().equalsIgnoreCase(loginUserFld.getText().toString()) || user.getSpUsername().equalsIgnoreCase(loginUserFld.getText().toString())) && user.getSpPassword().equals(logInPasswordField.getText().toString())) {
@@ -60,9 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                     if (loggedUser == null) {
-                        Toast.makeText(getBaseContext(), "Invalid user/email or password", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(getBaseContext(), "Welcome " + loggedUser.getSpFullname(), Toast.LENGTH_SHORT).show();
+                        Snackbar.make(layoutLogin, "Invalid user/email or password", Snackbar.LENGTH_SHORT).show();
                     }
                 }
             }
