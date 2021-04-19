@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -29,7 +30,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         layoutHome = findViewById(R.id.layoutHome);
 
         loggedUser = LoginActivity.loggedUser;
-        Snackbar.make(layoutHome, "Welcome " + loggedUser.getSpFullname(), Snackbar.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome " + loggedUser.getSpFullname(), Toast.LENGTH_SHORT).show();
+
+
         txtLoggedInUser.setText(loggedUser.getSpFullname());
 
         txtClients.setOnClickListener(this);

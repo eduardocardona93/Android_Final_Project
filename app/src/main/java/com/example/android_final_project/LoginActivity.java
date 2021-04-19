@@ -93,8 +93,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void fillClients() {
         if (clientsList.size() == 0) {
-            clientsList.add(new Client("111111", "Rasagjna Ghandi", "21554", "913133337755", "example1@company1.com"));
-            clientsList.add(new Client("222222", "Lino Hernandez", "21553", "915133436754", "example2@company2.com"));
+            clientsList.add(new Client("Rasagjna Ghandi","111111",  "21554", "913133337755", "example1@company1.com"));
+            clientsList.add(new Client("Lino Hernandez","222222",  "21553", "915133436754", "example2@company2.com"));
         }
     }
 
