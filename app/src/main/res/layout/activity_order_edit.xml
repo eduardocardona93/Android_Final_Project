@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/layoutEditOrder"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".orders.OrderEditActivity">
 
@@ -13,255 +20,273 @@
         android:layout_height="40dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="26dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+       android:src="@drawable/ic_baseline_arrow_back_24" />
 
     <EditText
         android:id="@+id/quantityFld"
         android:layout_width="190dp"
         android:layout_height="42dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
         android:ems="10"
+        android:layout_marginTop="16dp"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/textView31"
+        app:layout_constraintStart_toStartOf="@+id/heightFld"
         app:layout_constraintTop_toBottomOf="@+id/heightFld" />
 
     <TextView
         android:id="@+id/textView31"
-        android:layout_width="80dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center|start"
         android:text="@string/quantityLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView29" />
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/quantityFld"
+        app:layout_constraintEnd_toStartOf="@+id/quantityFld"
+        app:layout_constraintStart_toStartOf="@+id/textView29"
+        app:layout_constraintTop_toTopOf="@+id/quantityFld" />
 
     <EditText
         android:id="@+id/heightFld"
         android:layout_width="190dp"
         android:layout_height="42dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
         android:ems="10"
+        android:layout_marginTop="16dp"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/textView29"
+        app:layout_constraintStart_toStartOf="@+id/widthFld"
         app:layout_constraintTop_toBottomOf="@+id/widthFld" />
 
     <TextView
         android:id="@+id/textView29"
-        android:layout_width="80dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center|start"
         android:text="Height"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/heightFld"
+        app:layout_constraintEnd_toStartOf="@+id/heightFld"
+        app:layout_constraintStart_toStartOf="@+id/textView25"
+        app:layout_constraintTop_toTopOf="@+id/heightFld" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="86dp"
         android:layout_height="42dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="64dp"
+        style="@style/OrderEditTitles"
         android:gravity="center|start"
         android:text="@string/orderIdLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/imgReturnToOrderList"
+        app:layout_constraintTop_toBottomOf="@+id/orderEditTitleLbl" />
 
     <TextView
         android:id="@+id/orderIdLbl"
         android:layout_width="86dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="64dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:gravity="center|end"
         android:text="000000000"
+        app:layout_constraintBottom_toBottomOf="@+id/textView18"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView18" />
 
     <Spinner
         android:id="@+id/clientSp"
         android:layout_width="250dp"
         android:layout_height="42dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/orderIdLbl"
         app:layout_constraintTop_toBottomOf="@+id/orderIdLbl" />
 
     <Spinner
         android:id="@+id/fontTypeSp"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/textView24"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/fontColorSp"
+        app:layout_constraintStart_toStartOf="@+id/fontColorSp"
         app:layout_constraintTop_toBottomOf="@+id/fontColorSp" />
 
     <TextView
         android:id="@+id/textView24"
-        android:layout_width="86dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:gravity="center|start"
         android:text="@string/fontTypeLabel"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fontTypeSp"
+        app:layout_constraintEnd_toStartOf="@+id/fontTypeSp"
+        app:layout_constraintStart_toStartOf="@+id/textView23"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <TextView
         android:id="@+id/textView22"
-        android:layout_width="86dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center|start"
         android:text="@string/backgroundColorLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bgColorSp"
+        app:layout_constraintEnd_toStartOf="@+id/bgColorSp"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/bgColorSp" />
 
     <Spinner
         android:id="@+id/paperTypeSp"
         android:layout_width="250dp"
         android:layout_height="42dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/textView21"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/clientSp"
+        app:layout_constraintStart_toStartOf="@+id/clientSp"
         app:layout_constraintTop_toBottomOf="@+id/clientSp" />
 
     <Spinner
         android:id="@+id/fontColorSp"
         android:layout_width="250dp"
         android:layout_height="42dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/textView23"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/bgColorSp"
+        app:layout_constraintStart_toStartOf="@+id/bgColorSp"
         app:layout_constraintTop_toBottomOf="@+id/bgColorSp" />
 
     <TextView
         android:id="@+id/textView23"
-        android:layout_width="86dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center|start"
         android:text="@string/fontColorLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fontColorSp"
+        app:layout_constraintEnd_toStartOf="@+id/fontColorSp"
+        app:layout_constraintStart_toStartOf="@+id/textView22"
+        app:layout_constraintTop_toTopOf="@+id/fontColorSp" />
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="86dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center|start"
         android:text="@string/paperTypeLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/paperTypeSp"
+        app:layout_constraintEnd_toStartOf="@+id/paperTypeSp"
+        app:layout_constraintStart_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toTopOf="@+id/paperTypeSp" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="86dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
+
+        android:layout_width="0dp"
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
         android:gravity="center|start"
         android:text="@string/clientLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintBottom_toBottomOf="@+id/clientSp"
+        app:layout_constraintEnd_toStartOf="@+id/clientSp"
+        app:layout_constraintStart_toStartOf="@+id/textView18"
+        app:layout_constraintTop_toTopOf="@+id/clientSp"
+       />
 
     <Spinner
         android:id="@+id/bgColorSp"
         android:layout_width="250dp"
         android:layout_height="42dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/paperTypeSp"
+        app:layout_constraintStart_toStartOf="@+id/paperTypeSp"
         app:layout_constraintTop_toBottomOf="@+id/paperTypeSp" />
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="80dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:gravity="center|start"
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
         android:text="@string/widthLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintBottom_toBottomOf="@+id/widthFld"
+        app:layout_constraintEnd_toStartOf="@+id/widthFld"
+        app:layout_constraintStart_toStartOf="@+id/textView24"
+        app:layout_constraintTop_toTopOf="@+id/widthFld" />
 
     <EditText
         android:id="@+id/widthFld"
         android:layout_width="190dp"
         android:layout_height="42dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="15dp"
         android:ems="10"
+        android:layout_marginTop="16dp"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/textView25"
+        app:layout_constraintStart_toStartOf="@+id/fontTypeSp"
         app:layout_constraintTop_toBottomOf="@+id/fontTypeSp" />
 
     <TextView
         android:id="@+id/textView28"
-        android:layout_width="39dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
         android:gravity="center|center_horizontal"
         android:text="@string/inchesLabel"
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/widthFld"
+        app:layout_constraintEnd_toEndOf="@+id/fontTypeSp"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/widthFld"
-        app:layout_constraintTop_toBottomOf="@+id/fontTypeSp" />
+        app:layout_constraintTop_toTopOf="@+id/widthFld" />
 
     <TextView
         android:id="@+id/textView32"
-        android:layout_width="50dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:gravity="center|center_horizontal"
         android:text="@string/copiesLabel"
+
+        style="@style/OrderEditTitles"
+
+        app:layout_constraintBottom_toBottomOf="@+id/quantityFld"
+        app:layout_constraintEnd_toEndOf="@+id/textView30"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/quantityFld"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toTopOf="@+id/quantityFld" />
 
     <TextView
         android:id="@+id/textView30"
-        android:layout_width="40dp"
-        android:layout_height="42dp"
+        style="@style/OrderEditTitles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+
         android:gravity="center|center_horizontal"
         android:text="@string/feetsLabel"
+        app:layout_constraintBottom_toBottomOf="@+id/heightFld"
+        app:layout_constraintEnd_toEndOf="@+id/textView28"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/heightFld"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        app:layout_constraintTop_toTopOf="@+id/heightFld" />
 
     <TextView
         android:id="@+id/textView33"
@@ -272,45 +297,53 @@
         android:layout_marginTop="28dp"
         android:gravity="center|left"
         android:text="@string/totalLabel"
+        android:layout_marginEnd="10dp"
+        style="@style/OrderEditTitles"
+        android:layout_marginRight="10dp"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quantityFld" />
 
     <TextView
         android:id="@+id/totalLbl"
-        android:layout_width="130dp"
-        android:layout_height="42dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="28dp"
-        android:gravity="center|end"
+        android:gravity="start"
         android:text="$00000.00"
+        android:layout_marginEnd="10dp"
+        style="@style/ValuesText"
+        android:layout_marginRight="10dp"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView33"
-        app:layout_constraintTop_toBottomOf="@+id/quantityFld" />
+        app:layout_constraintTop_toTopOf="@+id/textView33" />
 
     <TextView
         android:id="@+id/orderEditTitleLbl"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginLeft="145dp"
-        android:layout_marginTop="16dp"
         android:textColor="#2196F3"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imgReturnToOrderList" />
 
     <Button
         android:id="@+id/saveOrderBtn"
         android:layout_width="300dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:text="@string/saveButtonLabel"
+        android:textColor="@color/white"
         app:backgroundTint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView33" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

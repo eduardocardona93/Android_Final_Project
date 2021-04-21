@@ -1,8 +1,5 @@
 package com.example.android_final_project.clients;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,16 +9,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.example.android_final_project.LoginActivity;
 import com.example.android_final_project.R;
 import com.google.android.material.snackbar.Snackbar;
 
 public class ClientEditActivity extends AppCompatActivity {
-    EditText clientIdFld, clientNameFld, clientEmailFld, clientPhoneFld,clientCompanyCodeFld;
+    EditText clientIdFld, clientNameFld, clientEmailFld, clientPhoneFld, clientCompanyCodeFld;
     TextView clientEditTitleLbl;
     Button saveClientBtn;
     ImageView imgReturnToClientList;
     ConstraintLayout layoutEditClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,8 @@ public class ClientEditActivity extends AppCompatActivity {
         imgReturnToClientList = findViewById(R.id.imgReturnToClientList);
 
         clientEditTitleLbl.setText("Add Client");
-        if(ClientsListActivity.selectedClient != null){
+
+        if (ClientsListActivity.selectedClient != null) {
             clientEditTitleLbl.setText("Edit Client");
             clientIdFld.setText(String.valueOf(ClientsListActivity.selectedClient.getClientIdentification()));
             clientNameFld.setText(String.valueOf(ClientsListActivity.selectedClient.getClientFullName()));
@@ -45,10 +47,11 @@ public class ClientEditActivity extends AppCompatActivity {
             clientEmailFld.setText(String.valueOf(ClientsListActivity.selectedClient.getClientEmail()));
             clientPhoneFld.setText(String.valueOf(ClientsListActivity.selectedClient.getClientPhoneNumber()));
         }
+
         imgReturnToClientList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( getBaseContext(), ClientsListActivity.class);
+                Intent intent = new Intent(getBaseContext(), ClientsListActivity.class);
                 startActivity(intent);
             }
         });
@@ -57,39 +60,47 @@ public class ClientEditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (clientIdFld.getText().toString().isEmpty()) {
                     Snackbar.make(layoutEditClient, "The identification field is empty", Snackbar.LENGTH_SHORT).show();
-                }else if (clientNameFld.getText().toString().isEmpty()) {
+                } else if (clientNameFld.getText().toString().isEmpty()) {
                     Snackbar.make(layoutEditClient, "The full name field is empty", Snackbar.LENGTH_SHORT).show();
 
-                }else if (clientCompanyCodeFld.getText().toString().isEmpty()) {
+                } else if (clientCompanyCodeFld.getText().toString().isEmpty()) {
                     Snackbar.make(layoutEditClient, "The company code field is empty", Snackbar.LENGTH_SHORT).show();
 
-                }else if (clientEmailFld.getText().toString().isEmpty()) {
+                } else if (clientEmailFld.getText().toString().isEmpty()) {
                     Snackbar.make(layoutEditClient, "The email field is empty", Snackbar.LENGTH_SHORT).show();
-                }else if (clientPhoneFld.getText().toString().isEmpty()) {
+                } else if (clientPhoneFld.getText().toString().isEmpty()) {
                     Snackbar.make(layoutEditClient, "The phone field is empty", Snackbar.LENGTH_SHORT).show();
-                }else{
-                    if(ClientsListActivity.selectedClient != null){
+                } else {
+                    if (ClientsListActivity.selectedPosition != -1) {
+                        LoginActivity.clientsList.get(ClientsListActivity.selectedPosition)
+                                .setClientCompanyCode(clientCompanyCodeFld.getText().toString());
+                        LoginActivity.clientsList.get(ClientsListActivity.selectedPosition)
+                                .setClientIdentification(clientIdFld.getText().toString());
+                        LoginActivity.clientsList.get(ClientsListActivity.selectedPosition)
+                                .setClientFullName(clientNameFld.getText().toString());
+                        LoginActivity.clientsList.get(ClientsListActivity.selectedPosition)
+                                .setClientPhoneNumber(clientPhoneFld.getText().toString());
+                        LoginActivity.clientsList.get(ClientsListActivity.selectedPosition)
+                                .setClientEmail(clientEmailFld.getText().toString());
+
+
+                        Toast.makeText(getBaseContext(), "Client Successfully Edited", Toast.LENGTH_SHORT).show();
+
+                    } else {
                         LoginActivity.clientsList.add(new Client(
                                 clientNameFld.getText().toString(),
                                 clientIdFld.getText().toString(),
                                 clientCompanyCodeFld.getText().toString(),
                                 clientPhoneFld.getText().toString(),
-                                clientEmailFld.getText().toString())
-                        );
+                                clientEmailFld.getText().toString()));
 
-                        Toast.makeText(getBaseContext(), "Client Successfully created", Toast.LENGTH_SHORT).show();
 
-                    }else{
-                        ClientsListActivity.selectedClient.setClientIdentification(clientIdFld.getText().toString());
-                        ClientsListActivity.selectedClient.setClientFullName(clientNameFld.getText().toString());
-                        ClientsListActivity.selectedClient.setClientEmail(clientEmailFld.getText().toString());
-                        ClientsListActivity.selectedClient.setClientCompanyCode(clientCompanyCodeFld.getText().toString());
-                        ClientsListActivity.selectedClient.setClientPhoneNumber(clientPhoneFld.getText().toString());
-                        Toast.makeText(getBaseContext(), "Client Successfully edited", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getBaseContext(), "Client Successfully Created", Toast.LENGTH_SHORT).show();
                     }
 
-                    Intent intent = new Intent( getBaseContext(), ClientsListActivity.class);
+                    Intent intent = new Intent(getBaseContext(), ClientsListActivity.class);
                     startActivity(intent);
+                    finish();
 
                 }
             }

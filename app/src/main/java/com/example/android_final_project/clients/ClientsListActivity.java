@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClientsListActivity extends AppCompatActivity {
+    public static int selectedPosition = -1;
     public static Client selectedClient;
     RecyclerView rcClients;
     ImageView clientListReturnHome;
@@ -33,9 +34,6 @@ public class ClientsListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_clients_list);
         rcClients = findViewById(R.id.rcProducts);
         clientListReturnHome = findViewById(R.id.clientListReturnHome);
-
-        rcClients.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        rcClients.setAdapter(new ClientsAdapter(this, LoginActivity.clientsList));
 
         clientListReturnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +51,16 @@ public class ClientsListActivity extends AppCompatActivity {
                 startActivity(intentEdit);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        selectedPosition = -1;
+        selectedClient = null;
+        rcClients.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rcClients.setAdapter(new ClientsAdapter(this, LoginActivity.clientsList));
+
     }
 
     class ClientsAdapter extends
@@ -91,6 +99,7 @@ public class ClientsListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 //                    Log.e("Client Name ", clientsListing.get(position).getClientFullName());
+                    selectedPosition = position;
                     selectedClient = clientsListing.get(position);
                     Intent intentEdit = new Intent(getBaseContext(), ClientEditActivity.class);
                     startActivity(intentEdit);
@@ -100,6 +109,7 @@ public class ClientsListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     LoginActivity.clientsList.remove(position);
+                    rcClients.getAdapter().notifyItemChanged(position);
                 }
             });
 

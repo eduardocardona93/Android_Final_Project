@@ -5,6 +5,11 @@
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/raleway_semibold</item>
     </style>
+ <style name="OrderEditTitles" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/raleway_semibold</item>
+    </style>
 
     <style name="FieldsText" parent="TextAppearance.AppCompat">
         <item name="android:textSize">16sp</item>
@@ -12,9 +17,20 @@
         <item name="android:fontFamily">@font/raleway_regular</item>
         <item name="android:padding">12dp</item>
     </style>
+    <style name="ValuesText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkGrey</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:padding">12dp</item>
+    </style>
 
     <style name="HomeMenu" parent="TextAppearance.AppCompat">
         <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/raleway_bold</item>
+    </style>
+  <style name="ScreensTitles" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:fontFamily">@font/raleway_bold</item>
     </style>

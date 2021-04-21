@@ -13,24 +13,20 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+      android:src="@drawable/ic_baseline_arrow_back_24" />
 
     <TextView
         android:id="@+id/textView36"
+        style="@style/ScreensTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/clientsLabel"
-        android:textSize="24sp"
-        
-        android:textColor="@color/black"
-        android:fontFamily="@font/raleway_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/clientListReturnHome" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcProducts"

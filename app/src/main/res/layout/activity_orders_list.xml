@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".orders.OrdersListActivity">
 
@@ -15,7 +16,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+       android:src="@drawable/ic_baseline_arrow_back_24" />
 
     <TextView
         android:id="@+id/textView14"
@@ -23,8 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/ordersLabel"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        style="@style/ScreensTitles"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,8 +32,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcOrders"
-        android:layout_width="411dp"
-        android:layout_height="658dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

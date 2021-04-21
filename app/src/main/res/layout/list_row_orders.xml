@@ -58,11 +58,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Edit"
+        android:fontFamily="@font/raleway_semibold"
+        android:layout_marginEnd="8dp"
+        android:paddingBottom="5dp"
+        android:textSize="18sp"
         android:textColor="@android:color/holo_green_dark"
         app:layout_constraintBottom_toBottomOf="@+id/orderProduct"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/orderId"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginRight="8dp" />
 
 
     <View
