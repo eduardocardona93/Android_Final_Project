@@ -98,7 +98,6 @@ public class ClientsListActivity extends AppCompatActivity {
             holder.txtEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Log.e("Client Name ", clientsListing.get(position).getClientFullName());
                     selectedPosition = position;
                     selectedClient = clientsListing.get(position);
                     Intent intentEdit = new Intent(getBaseContext(), ClientEditActivity.class);
@@ -109,7 +108,8 @@ public class ClientsListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     LoginActivity.clientsList.remove(position);
-                    rcClients.getAdapter().notifyItemChanged(position);
+                    rcClients.setAdapter(new ClientsAdapter(activity, LoginActivity.clientsList));
+//                    rcClients.getAdapter().notifyItemChanged(position);
                 }
             });
 

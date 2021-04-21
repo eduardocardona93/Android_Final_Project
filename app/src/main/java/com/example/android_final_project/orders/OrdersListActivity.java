@@ -28,17 +28,30 @@ import java.util.List;
 
 public class OrdersListActivity extends AppCompatActivity {
     public static Order selectedOrder;
+    public static int selectedPosition = -1;
     RecyclerView rcOrders;
     ImageView orderListReturnHome;
+    TextView addLbl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders_list);
         rcOrders = findViewById(R.id.rcOrders);
+        addLbl = findViewById(R.id.addLbl);
+
         orderListReturnHome = findViewById(R.id.orderListReturnHome);
 
         rcOrders.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rcOrders.setAdapter(new OrdersListActivity.OrdersAdapter(this, LoginActivity.orderList));
+
+        addLbl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedPosition = -1;
+                Intent intentEdit = new Intent(getBaseContext(), OrderEditActivity.class);
+                startActivity(intentEdit);
+            }
+        });
 
         orderListReturnHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +98,7 @@ public class OrdersListActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     selectedOrder = orderList.get(position);
+                    selectedPosition = position;
                     Intent intentEdit = new Intent(getBaseContext(), OrderEditActivity.class);
                     startActivity(intentEdit);
                 }

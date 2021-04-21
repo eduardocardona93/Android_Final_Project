@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         homeLogout = findViewById(R.id.homeLogout);
 
         loggedUser = LoginActivity.loggedUser;
-        Toast.makeText(this, "Welcome " + loggedUser.getSpFullname(), Toast.LENGTH_SHORT).show();
+
 
         homeLogout.setOnClickListener(new View.OnClickListener() {
             @Override

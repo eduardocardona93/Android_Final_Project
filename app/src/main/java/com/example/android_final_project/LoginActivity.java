@@ -73,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     if (loggedUser == null) {
                         Snackbar.make(layoutLogin, "Invalid user/email or password", Snackbar.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(getBaseContext(), "Welcome " + loggedUser.getSpFullname() , Toast.LENGTH_SHORT).show();
                     }
                 }
             }
