@@ -33,9 +33,9 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="@+id/editOrderBtnImg"
+        app:layout_constraintStart_toStartOf="@+id/editOrderBtnImg"
+        app:layout_constraintTop_toBottomOf="@+id/editOrderBtnImg" />
 
     <TextView
         android:id="@+id/textView2"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/loginUserFld" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/editOrderBtnImg"
         style="@style/FieldsTitles"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

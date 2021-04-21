@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class ClientEditActivity extends AppCompatActivity {
     EditText clientIdFld, clientNameFld, clientEmailFld, clientPhoneFld,clientCompanyCodeFld;
     TextView clientEditTitleLbl;
     Button saveClientBtn;
+    ImageView imgReturnToClientList;
     ConstraintLayout layoutEditClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class ClientEditActivity extends AppCompatActivity {
         clientEditTitleLbl = findViewById(R.id.clientEditTitleLbl);
         saveClientBtn = findViewById(R.id.saveClientBtn);
         layoutEditClient = findViewById(R.id.layoutEditClient);
+        imgReturnToClientList = findViewById(R.id.imgReturnToClientList);
 
         clientEditTitleLbl.setText("Add Client");
         if(ClientsListActivity.selectedClient != null){
@@ -42,7 +45,13 @@ public class ClientEditActivity extends AppCompatActivity {
             clientEmailFld.setText(String.valueOf(ClientsListActivity.selectedClient.getClientEmail()));
             clientPhoneFld.setText(String.valueOf(ClientsListActivity.selectedClient.getClientPhoneNumber()));
         }
-
+        imgReturnToClientList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( getBaseContext(), ClientsListActivity.class);
+                startActivity(intent);
+            }
+        });
         saveClientBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +77,7 @@ public class ClientEditActivity extends AppCompatActivity {
                                 clientEmailFld.getText().toString())
                         );
 
-                        Snackbar.make(layoutEditClient, "Client Successfully created", Snackbar.LENGTH_SHORT).show();
+                        Toast.makeText(getBaseContext(), "Client Successfully created", Toast.LENGTH_SHORT).show();
 
                     }else{
                         ClientsListActivity.selectedClient.setClientIdentification(clientIdFld.getText().toString());
@@ -76,8 +85,7 @@ public class ClientEditActivity extends AppCompatActivity {
                         ClientsListActivity.selectedClient.setClientEmail(clientEmailFld.getText().toString());
                         ClientsListActivity.selectedClient.setClientCompanyCode(clientCompanyCodeFld.getText().toString());
                         ClientsListActivity.selectedClient.setClientPhoneNumber(clientPhoneFld.getText().toString());
-                        Snackbar.make(layoutEditClient, "Client Successfully edited", Snackbar.LENGTH_SHORT).show();
-
+                        Toast.makeText(getBaseContext(), "Client Successfully edited", Toast.LENGTH_SHORT).show();
                     }
 
                     Intent intent = new Intent( getBaseContext(), ClientsListActivity.class);

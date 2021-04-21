@@ -3,10 +3,10 @@ package com.example.android_final_project.clients;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +15,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android_final_project.HomeActivity;
 import com.example.android_final_project.LoginActivity;
 import com.example.android_final_project.R;
 
@@ -24,24 +25,32 @@ import java.util.List;
 public class ClientsListActivity extends AppCompatActivity {
     public static Client selectedClient;
     RecyclerView rcClients;
-    // private List<Client> clientsListing = new ArrayList<>();
+    ImageView clientListReturnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clients_list);
-        rcClients = findViewById(R.id.rcClients);
-
+        rcClients = findViewById(R.id.rcProducts);
+        clientListReturnHome = findViewById(R.id.clientListReturnHome);
 
         rcClients.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rcClients.setAdapter(new ClientsAdapter(this, LoginActivity.clientsList));
 
+        clientListReturnHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEdit = new Intent(getBaseContext(), HomeActivity.class);
+                startActivity(intentEdit);
+            }
+        });
         findViewById(R.id.imgAddClient).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 // Open Add Client activity
-                //startActivity(new Intent(ClientsListActivity.this,Create));
+                Intent intentEdit = new Intent(getBaseContext(), ClientEditActivity.class);
+                startActivity(intentEdit);
             }
         });
     }
@@ -72,22 +81,25 @@ public class ClientsListActivity extends AppCompatActivity {
             holder.txtClientName.setText(clientsListing.get(position).getClientFullName());
             holder.txtClientPhoneNumber.setText(clientsListing.get(position).getClientPhoneNumber());
             holder.txtClientEmail.setText(clientsListing.get(position).getClientEmail());
-            holder.listRow.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.e("Client Name ", clientsListing.get(position).getClientFullName());
-                }
-            });
+//            holder.listRow.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Log.e("Client Name ", clientsListing.get(position).getClientFullName());
+//                }
+//            });
             holder.txtEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.e("Client Name ", clientsListing.get(position).getClientFullName());
+//                    Log.e("Client Name ", clientsListing.get(position).getClientFullName());
+                    selectedClient = clientsListing.get(position);
+                    Intent intentEdit = new Intent(getBaseContext(), ClientEditActivity.class);
+                    startActivity(intentEdit);
                 }
             });
             holder.txtDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.e("Client Name ", clientsListing.get(position).getClientFullName());
+                    LoginActivity.clientsList.remove(position);
                 }
             });
 
@@ -108,8 +120,8 @@ public class ClientsListActivity extends AppCompatActivity {
                 super(itemView);
                 txtClientName = itemView.findViewById(R.id.txtClientName);
                 txtClientEmail = itemView.findViewById(R.id.txtClientEmail);
-                txtClientPhoneNumber = itemView.findViewById(R.id.txtClientPhoneNumber);
-                listRow = itemView.findViewById(R.id.listRow);
+                txtClientPhoneNumber = itemView.findViewById(R.id.txtNameProduct);
+                listRow = itemView.findViewById(R.id.productListRow);
                 txtEdit = itemView.findViewById(R.id.txtEdit);
                 txtDelete = itemView.findViewById(R.id.txtDelete);
             }

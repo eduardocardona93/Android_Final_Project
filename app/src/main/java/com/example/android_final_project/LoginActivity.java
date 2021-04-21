@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.android_final_project.clients.Client;
+import com.example.android_final_project.orders.Order;
 import com.example.android_final_project.products.Product;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     public static ArrayList<Salesperson> userList = new ArrayList<>();
     public static ArrayList<Client> clientsList = new ArrayList<>();
     public static ArrayList<Product> producstList = new ArrayList<>();
+    public static ArrayList<Order> orderList = new ArrayList<>();
 
     public static Salesperson loggedUser;
 

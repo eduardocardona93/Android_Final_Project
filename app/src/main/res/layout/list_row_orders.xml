@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/listRow"
+    android:id="@+id/productListRow"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="15dp"
@@ -12,56 +12,56 @@
 
 
     <TextView
-        android:id="@+id/client_name"
+        android:id="@+id/orderId"
         style="@style/FieldsTitles"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
 
-        android:text="Project Name"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
+        android:text="Order Id"
+        app:layout_constraintEnd_toStartOf="@+id/editOrderBtnImg"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/project_description"
+        android:id="@+id/orderClient"
         style="@style/FieldsTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="6dp"
-        android:text="Project Short Description"
+        android:text="Client"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/client_name" />
+        app:layout_constraintTop_toBottomOf="@+id/orderId" />
 
     <TextView
-        android:id="@+id/project_timeline"
+        android:id="@+id/orderProduct"
         style="@style/FieldsTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15dp"
         android:layout_marginTop="16dp"
-        android:text="Timeline- Jan 31, 2021 to Feb 15, 2021"
+        android:text="Product"
         android:textColor="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/project_description" />
+        app:layout_constraintTop_toBottomOf="@+id/orderClient" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/editOrderBtnImg"
         style="@style/FieldsTitles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="In Progress"
+        android:text="Edit"
         android:textColor="@android:color/holo_green_dark"
-        app:layout_constraintBottom_toBottomOf="@+id/project_timeline"
+        app:layout_constraintBottom_toBottomOf="@+id/orderProduct"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/client_name"
+        app:layout_constraintTop_toTopOf="@+id/orderId"
         app:layout_constraintVertical_bias="0.0" />
 
 
@@ -72,5 +72,5 @@
         android:background="#cccccc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/project_timeline" />
+        app:layout_constraintTop_toBottomOf="@+id/orderProduct" />
 </androidx.constraintlayout.widget.ConstraintLayout>

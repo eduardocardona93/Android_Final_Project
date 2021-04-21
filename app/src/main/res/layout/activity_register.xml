@@ -10,6 +10,19 @@
     tools:context=".RegisterActivity">
 
     <TextView
+        android:id="@+id/textView39"
+        style="@style/FieldsTitles"
+        android:layout_width="84dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center|center_vertical"
+        android:text="@string/registerButtonText"
+        app:layout_constraintStart_toEndOf="@+id/imgBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textView6"
         style="@style/FieldsTitles"
         android:layout_width="wrap_content"
@@ -172,8 +185,7 @@
         android:layout_height="40dp"
         android:scaleType="fitStart"
         android:src="@drawable/ic_baseline_arrow_back_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView txtOrders, txtProducts, txtClients, txtLoggedInUser;
+    TextView txtOrders, txtProducts, txtClients, txtLoggedInUser, homeLogout;
     ConstraintLayout layoutHome;
     public static Salesperson loggedUser;
     @Override
@@ -28,12 +28,20 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         txtProducts = findViewById(R.id.txtProducts);
         txtLoggedInUser = findViewById(R.id.loggedAsUserNameLabel);
         layoutHome = findViewById(R.id.layoutHome);
+        homeLogout = findViewById(R.id.homeLogout);
 
         loggedUser = LoginActivity.loggedUser;
         Toast.makeText(this, "Welcome " + loggedUser.getSpFullname(), Toast.LENGTH_SHORT).show();
 
+        homeLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loggedUser = null;
+                startActivity(new Intent(HomeActivity.this, LoginActivity.class));
+            }
+        });
 
-        txtLoggedInUser.setText(loggedUser.getSpFullname());
+        txtLoggedInUser.setText(loggedUser.getSpUsername());
 
         txtClients.setOnClickListener(this);
         txtProducts.setOnClickListener(this);

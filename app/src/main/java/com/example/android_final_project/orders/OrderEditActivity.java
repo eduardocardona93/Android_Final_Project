@@ -3,15 +3,18 @@ package com.example.android_final_project.orders;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.android_final_project.LoginActivity;
+import com.example.android_final_project.clients.ClientsListActivity;
 import com.example.android_final_project.products.Product;
 import com.example.android_final_project.R;
 import com.example.android_final_project.clients.Client;
@@ -22,6 +25,7 @@ public class OrderEditActivity extends AppCompatActivity {
     TextView orderIdLbl, totalLbl, orderEditTitleLbl;
     Spinner clientSp, paperTypeSp, bgColorSp, fontColorSp,fontTypeSp;
     EditText widthFld, heightFld, quantityFld;
+    ImageView imgReturnToOrderList;
     Button saveOrderBtn;
     ConstraintLayout layoutEditOrder;
     public static ArrayList<Client> clientsList = new ArrayList<>();
@@ -88,7 +92,7 @@ public class OrderEditActivity extends AppCompatActivity {
         orderEditTitleLbl = findViewById(R.id.orderEditTitleLbl);
         saveOrderBtn = findViewById(R.id.saveOrderBtn);
         layoutEditOrder = findViewById(R.id.layoutEditOrder);
-
+        imgReturnToOrderList =  findViewById(R.id.imgReturnToOrderList);
 
         clientsList = LoginActivity.clientsList;
         producstList = LoginActivity.producstList;
@@ -119,6 +123,14 @@ public class OrderEditActivity extends AppCompatActivity {
         }else{
 
         }
+
+        imgReturnToOrderList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( getBaseContext(), OrdersListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         saveOrderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
