@@ -223,8 +223,8 @@ public class OrderEditActivity extends AppCompatActivity {
                                     colors[bgColorSp.getSelectedItemPosition()],
                                     colors[fontColorSp.getSelectedItemPosition()],
                                     fonts[fontTypeSp.getSelectedItemPosition()],
-                                    Integer.parseInt(heightFld.getText().toString()),
                                     Integer.parseInt(widthFld.getText().toString()),
+                                    Integer.parseInt(heightFld.getText().toString()),
                                     Integer.parseInt(quantityFld.getText().toString()),
                                     totalPrice,
                                     sqftPrice
