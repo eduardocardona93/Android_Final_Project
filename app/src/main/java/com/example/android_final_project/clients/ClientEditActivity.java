@@ -98,8 +98,7 @@ public class ClientEditActivity extends AppCompatActivity {
                         Toast.makeText(getBaseContext(), "Client Successfully Created", Toast.LENGTH_SHORT).show();
                     }
 
-                    Intent intent = new Intent(getBaseContext(), ClientsListActivity.class);
-                    startActivity(intent);
+
                     finish();
 
                 }

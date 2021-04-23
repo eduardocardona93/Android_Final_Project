@@ -243,8 +243,7 @@ public class OrderEditActivity extends AppCompatActivity {
                             LoginActivity.orderList.get(OrdersListActivity.selectedPosition).setOrderPaperPrice(sqftPrice);
                             Toast.makeText(getBaseContext(), "Order Successfully Edited", Toast.LENGTH_SHORT).show();
                         }
-                        Intent intent = new Intent(getBaseContext(), OrdersListActivity.class);
-                        startActivity(intent);
+
                         finish();
                     }
                 }

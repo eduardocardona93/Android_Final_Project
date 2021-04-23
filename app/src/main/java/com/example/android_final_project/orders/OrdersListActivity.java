@@ -41,8 +41,6 @@ public class OrdersListActivity extends AppCompatActivity {
 
         orderListReturnHome = findViewById(R.id.orderListReturnHome);
 
-        rcOrders.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        rcOrders.setAdapter(new OrdersListActivity.OrdersAdapter(this, LoginActivity.orderList));
 
         addLbl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +58,16 @@ public class OrdersListActivity extends AppCompatActivity {
                 startActivity(intentEdit);
             }
         });
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        selectedPosition=-1;
+        selectedOrder=null;
+        rcOrders.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        rcOrders.setAdapter(new OrdersListActivity.OrdersAdapter(this, LoginActivity.orderList));
+
     }
 
     class OrdersAdapter extends
@@ -87,7 +95,7 @@ public class OrdersListActivity extends AppCompatActivity {
         public void onBindViewHolder(@NonNull OrdersListActivity.OrdersAdapter.OrderViewHolder holder, int position) {
             holder.orderId.setText(orderList.get(position).getOrderId());
             holder.orderClient.setText(orderList.get(position).getOrderClient());
-            holder.orderProduct.setText(orderList.get(position).getOrderClient());
+            holder.orderProduct.setText(orderList.get(position).getOrderProduct());
 //            holder.listRow.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
